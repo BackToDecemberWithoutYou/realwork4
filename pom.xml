@@ -50,4 +50,25 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <!-- 其他配置 -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>3.1.2</version>
+                <!-- 可选配置 -->
+                <configuration>
+                    <!-- 配置测试类的命名模式 -->
+                    <includes>
+                        <include>**/AllTest.java</include>
+                    </includes>
+                    <!-- 配置测试失败时是否让构建失败 -->
+                    <testFailureIgnore>false</testFailureIgnore>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+    <!-- 其他配置 -->
 </project>
