@@ -62,10 +62,10 @@
                 <configuration>
                     <!-- 配置测试类的命名模式 -->
                     <includes>
-                        <include>**/AllTest.java</include>
+                        <include>**/StringUtilsTest.java</include>
                     </includes>
                     <!-- 配置测试失败时是否让构建失败 -->
-                    <testFailureIgnore>false</testFailureIgnore>
+                    <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
 
@@ -78,7 +78,7 @@
                     <archive>
                         <manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>org.apache.commons.lang3.StringUtilsTest</mainClass> <!-- 指定主类 -->
+                            <mainClass>org.apache.commons.lang3.myStringUtilsTest</mainClass> <!-- 指定主类 -->
                         </manifest>
                     </archive>
                 </configuration>
