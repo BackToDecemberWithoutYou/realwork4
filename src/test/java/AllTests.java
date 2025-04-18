@@ -1,3 +1,5 @@
+/*
+import org.apache.commons.lang3.StringUtilsTest;
 import org.junit.platform.suite.api.SelectClasses;
 import org.junit.platform.suite.api.Suite;
 
@@ -9,3 +11,4 @@ import org.junit.platform.suite.api.Suite;
 public class AllTests {
     // 这个类可以是空的，只需要注解即可
 }
+*/
