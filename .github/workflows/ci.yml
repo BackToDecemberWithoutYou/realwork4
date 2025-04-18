@@ -1,33 +1,26 @@
 name: Java CI
 
-on:
-  push:
-    branches: [ "master" ]  # 监听 master 分支的推送
-  pull_request:
-    branches: [ "master" ]  # 监听针对 master 的 PR
+on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # 使用 GitHub 的 Ubuntu 虚拟机
+    runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4  # 检出代码
+    - uses: actions/checkout@v4
 
-      - name: Set up JDK 17
-        uses: actions/setup-java@v3
-        with:
-          java-version: '17'
-          distribution: 'temurin'  # 使用 Eclipse Temurin JDK
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
+      with:
+        java-version: '17'
+        distribution: 'temurin'
 
-      - name: Build with Maven
-        run: mvn -B package  # 执行 Maven 打包（会触发编译）
+    - name: Build and Test
+      run: mvn -B package
 
-      - name: Run Unit Tests
-        run: mvn -B test     # 运行单元测试
-
-      - name: Upload Test Results
-        if: always()  # 即使测试失败也上传结果
-        uses: actions/upload-artifact@v3
-        with:
-          name: test-results
-          path: target/surefire-reports/  # JUnit 测试报告路径
+    - name: Upload Test Results
+      uses: actions/upload-artifact@v4  # 关键修正点
+      if: always()
+      with:
+        name: test-results
+        path: target/surefire-reports/
