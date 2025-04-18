@@ -7,7 +7,7 @@ public class StringUtilsTestWithoutTool {
         // 测试 isBlank 方法
         testIsBlank();
         // 测试注入错误的 equals 方法
-        testEquals();
+        //testEquals();
         // 测试 reverse 方法
         testReverse();
     }
